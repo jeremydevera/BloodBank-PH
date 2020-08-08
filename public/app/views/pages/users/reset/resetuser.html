@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<br><br><br>
+<div class="admin-block d-flex">
+    <div class="col-4 mx-auto text-center">
+        <a class="link" href="index.html"><img src="./assets/img/logo.png" width="65px" /></a>
+    </div>       
+               
+</div>
+<br>
+<h2 class="" style="text-align:center;color:#D6293D">Forgot Username</h2>
+<br>
+<body class="bg-silver-300">
+    
+    <div class="content"><br>
+
+    
+    <!-- Custom Success Message -->
+    <div class="form-group show-hide-message" ng-show="username.successMsg">
+        <div style="text-align:center" class="alert alert-success alert-bordered-right">{{ username.successMsg }}</div>
+    </div>
+    
+    <!-- Custom Error Message -->
+    <div class="form-group show-hide-message" ng-show="password.errorMsg">
+        <div style="text-align:center" class="alert alert-danger alert-bordered-right">{{ username.errorMsg }}</div>
+    </div>
+        
+        <form id="forgot-form" name="userForm" ng-submit="username.sendUsername(userData, userForm.$valid);"  style="border: 1px solid lightgrey ; border-radius: 5px; " novalidate>
+           
+            <p class="m-b-20"><strong>Enter your username below and we'll send you password reset instructions.</strong></p>
+            <div class="form-group">
+                <input ng-disabled="username.disabled || facebook.disabled || twitter.disabled || google.disabled" style="padding:12px;" class="form-control" type="text" name="username" placeholder="Username" autocomplete="off" ng-model="username.userData.email" required>
+            </div>
+            <div class="form-group">
+                <button ng-disabled="username.disabled || facebook.disabled || twitter.disabled || google.disabled" style="cursor:pointer; padding:12px;" class="btn btn-danger btn-block" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <!-- BEGIN PAGA BACKDROPS-->
+    <div class="sidenav-backdrop backdrop"></div>
+  
+
+</body>
+
+</html>

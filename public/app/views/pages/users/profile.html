@@ -1,0 +1,21 @@
+<div class="page-header">
+    <h1>{{ main.username}}'s Profile</h1>
+    <li><a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();">Logout</a></li>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading" style="text-align: center;"><strong>User Profile</strong></div>
+ 
+    <table class="table">
+            <tr>
+                <td><strong>Username</strong></td>
+                <td><strong>Email Address </strong></td>
+                <td><strong>Password </strong></td>
+            </tr>
+            <tr>
+                <td>{{main.username}}</td>
+                <td>{{main.useremail}}</td>
+                <td>*****************</td>
+            </tr>
+        </table>
+</div>

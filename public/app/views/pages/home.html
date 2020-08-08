@@ -1,0 +1,92 @@
+
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Admincast bootstrap 4 &amp; angular 5 admin template, Шаблон админки | DataTables</title>
+    <!-- GLOBAL MAINLY STYLES-->
+    <link href="./assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="./assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+    <!-- PLUGINS STYLES-->
+    <link href="./assets/vendors/DataTables/datatables.min.css" rel="stylesheet" />
+    <!-- THEME STYLES-->
+    <link href="assets/css/main.min.css" rel="stylesheet" />
+<link href="twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+<div ngIf="isUserLoggedIn" class="page-header">
+      
+    <div class="content" ng-show="!main.isLoggedIn" >
+            <div class="admin-block d-flex">
+                    <div class="col-4 mx-auto text-center">
+                        <a class="link" href="index.html"><img src="./assets/img/logo.png" width="65px" /></a>
+                    </div>       
+                            
+                </div>
+            <br>
+            <h2 class="" style="text-align:center;color:#D6293D">Sign In to BloodBankPH</h2>
+            <br>
+        <!-- Custom Success Message -->
+        <div class="form-group show-hide-message" ng-show="main.successMsg">
+            <div style="text-align:center" class="alert alert-success alert"><strong>{{ main.successMsg }}</strong></div>
+        </div>
+            
+            <!-- Custom Error Message -->
+            <div class="form-group show-hide-message" ng-show="main.errorMsg">
+                <div style="text-align:center" class="alert alert-danger alert"><strong>{{ main.errorMsg }}</strong>
+                    <a ng-show="main.expired" href="/resend">
+                        <button type="button" class="btn btn-success">Resend Activation Link</button>
+                    </a>
+                </div>
+            
+            </div>
+
+            
+    <form ng-submit="main.doLogin(loginData);" id="login-form" style="border: 1px solid lightgrey ; border-radius: 5px; ">
+        
+        <br>
+
+        <div class="form-group">
+            <div class="input-group-icon right">
+                <div class="input-icon"><i  style="padding:15px 10px;" class="fa fa-envelope"></i></div>
+                <input  style="padding:20px;" ng-disabled="main.disabled" class="form-control" type="text" name="username" placeholder="Username" autocomplete="off" ng-model="main.loginData.username">
+            </div>
+        </div>
+  
+            
+        <div class="form-group">
+            <div class="input-group-icon right">
+                <div class="input-icon"><i  style="padding:15px 10px;" class="fa fa-lock font-16"></i></div>
+                <input  style="padding:20px;" ng-disabled="main.disabled" class="form-control" type="password" name="password" placeholder="Password" ng-model="main.loginData.password">
+            </div>
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+            <label class="ui-checkbox ui-checkbox-info">
+                <input type="checkbox">
+                <span class="input-span"></span>Remember me
+            </label>
+        </div>
+ 
+        <div class="form-group">
+            <button style="cursor:pointer; border-radius:50px; padding:12px;" ng-disabled="main.disabled" class="btn cur-p btn-danger btn-block btn-md" type="submit">Login</button>
+        </div>
+
+        <!-- Loading Icon (Bootstrap) -->
+        <div class="jumbotron text-center" ng-show="main.loading" >
+            <span class="glyphicon glyphicon-repeat spinner"></span>
+            <p>Loading....</p>
+        </div>
+
+        <div class="social-auth-hr">
+            <span>Having a problem?</span>
+        </div>
+        
+
+        <div class="text-center social-auth m-b-20">
+            <a style="text-decoration: underline" href="/resetpassword" ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled">Forgot Password</a>&nbsp&nbsp
+            <a style="text-decoration: underline" href="/resetusername" ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled">Forgot Username</a>            
+        </div>
+    </form>
+
+</div>
+<a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();">Logout</a>
+</div>
